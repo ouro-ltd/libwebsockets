@@ -1943,7 +1943,7 @@ try_pollout:
 			 */
 			if ((wsi->vhost->protocols[0].callback)(wsi,
 					LWS_CALLBACK_FILTER_NETWORK_CONNECTION,
-					NULL, (void *)(long)accept_fd, 0)) {
+					NULL, (void *)accept_fd, 0)) {
 				lwsl_debug("Callback denied network connection\n");
 				compatible_close(accept_fd);
 				break;
