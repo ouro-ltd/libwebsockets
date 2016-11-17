@@ -3432,7 +3432,7 @@ lws_callback_http_dummy(struct lws *wsi, enum lws_callback_reasons reason,
  *
  * \param wsi:	Websocket connection instance
  */
-LWS_VISIBLE LWS_EXTERN int
+LWS_VISIBLE LWS_EXTERN lws_sockfd_type
 lws_get_socket_fd(struct lws *wsi);
 
 /**

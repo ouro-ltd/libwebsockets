@@ -1480,7 +1480,7 @@ lws_rxflow_cache(struct lws *wsi, unsigned char *buf, int n, int len);
 #ifndef LWS_LATENCY
 static inline void
 lws_latency(struct lws_context *context, struct lws *wsi, const char *action,
-	    int ret, int completion) {
+	    lws_sockfd_type ret, int completion) {
 	do {
 		(void)context; (void)wsi; (void)action; (void)ret;
 		(void)completion;

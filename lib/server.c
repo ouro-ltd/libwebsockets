@@ -1916,8 +1916,8 @@ try_pollout:
 			accept_fd  = accept(pollfd->fd, (struct sockaddr *)&cli_addr,
 					    &clilen);
 			lws_latency(context, wsi, "listener accept", accept_fd,
-				    accept_fd >= 0);
-			if (accept_fd < 0) {
+                lws_sockfd_valid(accept_fd));
+			if (!lws_sockfd_valid(accept_fd)) {
 				if (LWS_ERRNO == LWS_EAGAIN ||
 				    LWS_ERRNO == LWS_EWOULDBLOCK) {
 					lwsl_err("accept asks to try again\n");

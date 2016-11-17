@@ -893,7 +893,7 @@ lws_now_secs(void)
 
 #if LWS_POSIX
 
-LWS_VISIBLE int
+LWS_VISIBLE lws_sockfd_type
 lws_get_socket_fd(struct lws *wsi)
 {
 	return wsi->sock;
